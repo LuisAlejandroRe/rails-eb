@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - gem install bundler
+      - bundle install
+
+  pre_build:
+    commands:
+      - echo "Setting up the test database..."
+      - bundle exec rake db:migrate RAILS_ENV=test
+
+  build:
+    commands:
+      - echo "Running tests..."
+      - rails test
+
+artifacts:
+  files:
+    - "**/*"

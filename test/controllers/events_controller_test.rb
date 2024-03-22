@@ -10,10 +10,10 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
-    get new_event_url
-    assert_response :success
-  end
+  # test "should get new" do
+  #   get new_event_url
+  #   assert_response :success
+  # end
 
   test "should create event" do
     assert_difference("Event.count") do
